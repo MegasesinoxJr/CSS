@@ -11,63 +11,6 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-
-    <!-- confirmacion-->
-
-    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmModalLabel">Confirmar Eliminación</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ¿Estás seguro de que deseas eliminar este usuario?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- desbloquear -->
-
-    <div class="modal fade" id="confirmDesbloquear" tabindex="-1" aria-labelledby="confirmModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmModalLabel">Confirmar Eliminación</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ¿Estás seguro de que deseas bloquear/desbloquear este usuario?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <script>
-        function abrirModal() {
-            var modal = new bootstrap.Modal(document.getElementById('confirmModal'));
-            modal.show();
-        }
-
-        function abrirModalDesbloquear() {
-            var modal = new bootstrap.Modal(document.getElementById('confirmDesbloquear'));
-            modal.show();
-        }
-    </script>
-
 </head>
 
 <body class="sb-nav-fixed">
@@ -252,54 +195,56 @@
                                     <i class="fas fa-chart-area me-1"></i>
                                     Usuarios
                                 </div>
-                                <div class="container mt-4">
+                                <div class="container mt-5">
+                                    <h2>Añadir usuario</h2>
+                                    <form action="procesar_usuario.php" method="POST">
+                                        <div class="mb-3">
+                                            <label for="nombre" class="form-label">Nombre</label>
+                                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                        </div>
 
-                                    <div class="mb-3">
-                                        <a href="nuevoUsuario.html" class="btn btn-success">Añadir Usuario</a>
-                                    </div>
+                                        <div class="mb-3">
+                                            <label for="apellidos" class="form-label">Apellidos</label>
+                                            <input type="text" class="form-control" id="apellidos" name="apellidos"
+                                                required>
+                                        </div>
 
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Nombre</th>
-                                                <th>Email</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Juan Pérez</td>
-                                                <td>juanperez@email.com</td>
-                                                <td>
-                                                    <a href="user-posts.html?id=1" class="btn btn-primary">Ver
-                                                        Publicaciones</a>
-                                                    <a href="edit-user.html?id=1" class="btn btn-warning">Editar</a>
-                                                    <button class="btn btn-danger"
-                                                        onclick="abrirModal()">Eliminar</button>
-                                                    <button class="btn btn-danger"
-                                                        onclick="abrirModalDesbloquear()">Bloquear</button>
-                                                </td>
-                                            </tr>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email" name="email" required>
+                                        </div>
 
-                                            <tr class="opacity-low">
-                                                <td>2</td>
-                                                <td>Irene CSS</td>
-                                                <td>IreneCSS@email.com</td>
-                                                <td>
-                                                    <a href="user-posts.html?id=2" class="btn btn-primary">Ver
-                                                        Publicaciones</a>
-                                                    <a href="edit-user.html?id=2" class="btn btn-warning">Editar</a>
-                                                    <button class="btn btn-danger"
-                                                        onclick="abrirModal()">Eliminar</button>
-                                                    <button class="btn btn-warning"
-                                                        onclick="abrirModalDesbloquear()">Desbloquear</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                        <div class="mb-3">
+                                            <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+                                            <input type="date" class="form-control" id="fecha_nacimiento"
+                                                name="fecha_nacimiento" required>
+                                        </div>
 
+                                        <div class="mb-3">
+                                            <label for="pais" class="form-label">País de Residencia</label>
+                                            <input type="text" class="form-control" id="pais" name="pais" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="ciudad" class="form-label">Ciudad de Residencia</label>
+                                            <input type="text" class="form-control" id="ciudad" name="ciudad" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="contraseña" class="form-label">Contraseña</label>
+                                            <input type="password" class="form-control" id="contraseña"
+                                                name="contraseña" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="repetir_contraseña" class="form-label">Repetir
+                                                Contraseña</label>
+                                            <input type="password" class="form-control" id="repetir_contraseña"
+                                                name="repetir_contraseña" required>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+                                    </form>
                                 </div>
 
 
