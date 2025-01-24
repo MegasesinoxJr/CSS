@@ -11265,3 +11265,18 @@ body {
 .btn-back {
   margin-top: 30px;
 }
+
+.img-example {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 2em;
+}
+.filter-example {
+  color: #0dcaf0;
+  font-style: italic;
+
+}
+.filter-example span {
+  color: #6f42c1;
+
+}
