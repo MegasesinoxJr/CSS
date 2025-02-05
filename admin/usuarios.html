@@ -11,6 +11,69 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+
+
+    
+    <!-- confirmacion-->
+
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas eliminar este usuario?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- desbloquear -->
+
+    <div class="modal fade" id="confirmDesbloquear" tabindex="-1" aria-labelledby="confirmModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmar bloqueo/desbloqueo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas bloquear/desbloquear este usuario?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Proceder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        function abrirModal() {
+            var modal = new bootstrap.Modal(document.getElementById('confirmModal'));
+            modal.show();
+        }
+
+        function abrirModalDesbloquear() {
+            var modal = new bootstrap.Modal(document.getElementById('confirmDesbloquear'));
+            modal.show();
+        }
+    </script>
+
+
+
+
 </head>
 
 <body class="sb-nav-fixed">
@@ -182,9 +245,9 @@
                                                 <td>Juan Pérez</td>
                                                 <td>juanperez@email.com</td>
                                                 <td>
-                                                    <a href="user-posts.html?id=1" class="btn btn-primary">Ver
+                                                    <a href="publicacionesJuan.html" class="btn btn-primary">Ver
                                                         Publicaciones</a>
-                                                    <a href="edit-user.html?id=1" class="btn btn-warning">Editar</a>
+                                                    <a href="usuario1.html" class="btn btn-warning">Editar</a>
                                                     <button class="btn btn-danger"
                                                         onclick="abrirModal()">Eliminar</button>
                                                     <button class="btn btn-danger"
@@ -197,9 +260,9 @@
                                                 <td>Irene CSS</td>
                                                 <td>IreneCSS@email.com</td>
                                                 <td>
-                                                    <a href="user-posts.html?id=2" class="btn btn-primary">Ver
+                                                    <a href="publicacionesIrene.html" class="btn btn-primary">Ver
                                                         Publicaciones</a>
-                                                    <a href="edit-user.html?id=2" class="btn btn-warning">Editar</a>
+                                                    <a href="usuario2.html" class="btn btn-warning">Editar</a>
                                                     <button class="btn btn-danger"
                                                         onclick="abrirModal()">Eliminar</button>
                                                     <button class="btn btn-warning"
