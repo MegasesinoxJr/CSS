@@ -11,6 +11,27 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <script>
+
+        function showAll() {
+
+            var [_,...rows] = document.querySelectorAll('.row');
+
+            rows.forEach(function (row) {
+
+                row.style.display = "block";
+
+            });
+        }
+
+
+        function changeDisplay(button) {
+            var row = button.closest('.row');
+            row.style.display = 'none';
+        }
+    </script>
+
 </head>
 
 <body class="sb-nav-fixed">
@@ -155,123 +176,76 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-xl-6">
+                        <div class="col-xl-8">
                             <div class="card mb-4">
                                 <div class="card-header">
                                     <i class="fas fa-chart-area me-1"></i>
-                                    Usuarios conectados últimos 14 días
+                                    Publicación
                                 </div>
-                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-bar me-1"></i>
-                                    Publicaciones creadas
-                                </div>
-                                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <i class="fas fa-table me-1"></i>
-                            Datos
-                        </div>
-                        <div class="card-body">
 
 
 
+                                
 
 
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nombre</th>
-                                        <th>Email</th>
-                                        <th>Última conexión</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Juan Pérez</td>
-                                        <td>juanperez@email.com</td>
-                                        <td>
-                                            Hace 2 horas.
-                                        </td>
-                                    </tr>
+                                
+                                <div class="row blog-post">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h1 class="post-title">Filtros en CSS para Imágenes</h1>
+                                                <p class="post-subtitle">Publicado el 23 de enero de 2025</p>
+                                                <div class="content">
+                                                    <h2>1. Cambiar Brillo</h2>
+                                                    <p>Con el filtro <code>brightness()</code> puedes ajustar el
+                                                        brillo de una imagen, haciendo que se vea más clara o más
+                                                        oscura.</p>
+                                                    <img src="../admin/img/filtro_brightness.png"
+                                                        style="filter: brightness(1);" class="blog-image">
 
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Irene CSS</td>
-                                        <td>IreneCSS@email.com</td>
-                                        <td class="green-font">
+                                                    <h2>2. Cambiar Contraste</h2>
+                                                    <p>La propiedad <code>contrast()</code> ajusta el contraste de
+                                                        la imagen.</p>
+                                                    <img src="../admin/img/filtro_contrast.png"
+                                                        style="filter: contrast(1);" class="blog-image">
 
-                                            En linea.
+                                                    <h2>3. Filtros de Saturación</h2>
+                                                    <p>La propiedad <code>saturate()</code> permite cambiar la
+                                                        saturación de los colores en una imagen.</p>
+                                                    <img src="../admin/img/filtro_saturate.png"
+                                                        style="filter: saturate(1);" class="blog-image">
 
-                                        </td>
-                                    </tr>
+                                                    <h2>4. Desenfoque de Imagen</h2>
+                                                    <p>El filtro <code>blur()</code> aplica un desenfoque a la
+                                                        imagen.</p>
+                                                    <img src="../admin/img/BlurFilter.jpg"
+                                                        style="filter: blur(0px);" class="blog-image">
 
-                                    <tr>
-                                        <td>3</td>
-                                        <td>David Gómiz</td>
-                                        <td>david@email.com</td>
-                                        <td class="red-font">
-
-                                            Bloqueado.
-
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Kenzi VRC</td>
-                                        <td>kenzi@email.com</td>
-                                        <td>
-
-                                            Hace 23 minutos.
-
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                                                    <a href="index.html" class="btn btn-primary btn-back">Volver al
+                                                        Administrador</a>
+                                                    <button onclick="changeDisplay(this)"
+                                                        class="btn btn-primary btn-back">
+                                                        Eliminar de vista</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
 
 
 
 
 
 
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold">Nº PUBLICACIONES BLOQUEADAS:</span>
-                                <span>371</span>
-                            </div>
-
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="fw-bold">Nº USUARIOS PENDIENTES DE VALIDAR:</span>
-                                <span>103</span>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Trabajo CSS</div>
+                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
                         <div>
-                            <a href="#">Politicas de privacidad</a>
+                            <a href="#">Privacy Policy</a>
                             &middot;
-                            <a href="#">Términos &amp; Condiciones</a>
+                            <a href="#">Terms &amp; Conditions</a>
                         </div>
                     </div>
                 </div>

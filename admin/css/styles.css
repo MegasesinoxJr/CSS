@@ -11136,7 +11136,7 @@ body {
 .datatable-pagination .ellipsis a,
 .datatable-pagination .disabled a,
 .datatable-pagination .disabled a:focus,
-.datatable-pagination .disabled a:hover {
+.datatable-pagination .disabled a: {
   cursor: not-allowed;
 }
 
@@ -11279,4 +11279,11 @@ body {
 .filter-example span {
   color: #6f42c1;
 
+}
+
+.green-font{
+  color: green;
+}
+.red-font{
+  color: red;
 }
